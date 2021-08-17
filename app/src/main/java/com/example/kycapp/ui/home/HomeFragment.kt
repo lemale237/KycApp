@@ -71,6 +71,14 @@ class HomeFragment : Fragment() {
         })
     }
 
+
+
+
+
+
+
+
+
     private fun onClickButton() {
         next.setOnClickListener {
             generalPosition.value?.let {
