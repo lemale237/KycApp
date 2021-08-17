@@ -3,11 +3,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color"
     tools:context=".ui.step3.Step3Fragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="100dp">
+
+        <EditText
+            android:id="@+id/nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_account_login_custom"
+            android:drawableLeft="@drawable/ic_account_login"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/prenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/prenom"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_account_login_custom"
+            android:drawableLeft="@drawable/ic_account_login"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/date_naissance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/date_naissance"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_calendar_custom"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/lieu_naissance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lieu_naissance"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_location_custom"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/numero_telephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/numero_telephone"
+            android:phoneNumber="true"
+            android:inputType="phone"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_phone_custom"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/residence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/residence"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_home_custom"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/link_to_next_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/group_12" />
+    </LinearLayout>
+
 
 </FrameLayout>

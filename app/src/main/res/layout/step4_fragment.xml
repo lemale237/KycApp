@@ -3,11 +3,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color"
     tools:context=".ui.step4.Step4Fragment">
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="100dp">
+
+        <EditText
+            android:id="@+id/entreprise_agent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/entreprise_agent"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_entreprise_custom"
+            android:drawableLeft="@drawable/ic_entreprise"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/smobilpay_id_utilisateur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/smobilpay_id_utilisateur"
+            android:inputType="number"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_cni_custom"
+            android:drawableLeft="@drawable/ic_cni"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/profession_agent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/profession_agent"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_profession_custom"
+            android:drawableLeft="@drawable/ic_profession"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="6dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:text="@string/filmer_verso"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/photo_prise2"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/group_18"
+            tools:ignore="DuplicateIds" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/link_to_end_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/group_11" />
+    </LinearLayout>
+
 
 </FrameLayout>
