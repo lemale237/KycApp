@@ -40,8 +40,6 @@
     <string name="source_financiere_agent">Source financière de l\'agent</string>
     <string name="entreprise_agent">Entreprise de l\'agent</string>
     <string name="smobilpay_id_utilisateur">Smibilpay ID utilisateur</string>
-    <string name="photo_point_de_vente_agent">Photo point de vente</string>
-    <string name="photo_point_agent">Photo point de l\'agent</string>
     <string name="donnees_enregistree">Les données ont bien été enregistrées</string>
     <string name="agents_enregistrer">Agents enregistrés</string>
     <string name="search_bar">Recherche</string>
@@ -52,4 +50,12 @@
     <string name="donnees_supprimer">Agent supprimé</string>
     <string name="donnees_modifier">Informations modifiées</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="filmer_recto">recto de la cni</string>
+    <string name="filmer_verso">verso de la cni</string>
+    <string name="Photo_point_de_vente">photo de l\'agent</string>
+    <string name="Photo_de_lagent">photo du point de vente</string>
+    <string name="next">Next</string>
+    <string name="previews">Previews</string>
+
+
 </resources>

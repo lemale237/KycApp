@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.kycapp.R
 import com.example.kycapp.databinding.FragmentHomeBinding
@@ -68,22 +70,18 @@ class HomeFragment : Fragment() {
     private fun observeLiveData() {
         generalPosition.observe(viewLifecycleOwner, {
             viewPager.setCurrentItem(it)
+            if (it==3)next.text =  "Terminer"
         })
     }
-
-
-
-
-
-
-
-
-
+// code cique du bouton terminé à succregistration
     private fun onClickButton() {
         next.setOnClickListener {
             generalPosition.value?.let {
                 if (it < 3) {
                     generalPosition.value = generalPosition.value?.plus(1)
+                }else{
+
+                    findNavController().navigate(R.id.action_navigation_home_to_sucessRegistrationFragment)
                 }
             }
 

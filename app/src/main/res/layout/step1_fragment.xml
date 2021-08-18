@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="35dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:textSize="15dp"/>
 
         <ImageView
-            android:id="@+id/photo_prise"
+            android:id="@+id/photo_prise_recto"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:layout_marginTop="2dp"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:layout_marginTop="330dp">
+        android:layout_marginTop="240dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -49,7 +49,7 @@
             android:textSize="15dp"/>
 
         <ImageView
-            android:id="@+id/photo_prise2"
+            android:id="@+id/photo_prise_verso"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:layout_marginTop="2dp"
