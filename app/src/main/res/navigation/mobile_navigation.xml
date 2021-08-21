@@ -39,5 +39,17 @@
         android:id="@+id/sucessRegistrationFragment"
         android:name="com.example.kycapp.ui.successRegistration.SucessRegistrationFragment"
         android:label="sucess_registration_fragment"
-        tools:layout="@layout/sucess_registration_fragment" />
+        tools:layout="@layout/sucess_registration_fragment" >
+        <action
+            android:id="@+id/action_sucessRegistrationFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <activity
+        android:id="@+id/splashScreenAcivity"
+        android:name="com.example.kycapp.SplashScreenAcivity"
+        android:label="SplashScreenAcivity" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.kycapp.LoginActivity"
+        android:label="LoginActivity" />
 </navigation>

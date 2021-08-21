@@ -10,21 +10,7 @@
         android:supportsRtl="true"
 
         android:theme="@style/Theme.KycApp">
-        <activity
-            android:name=".ProgressBarActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SupprimerInfosActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AgentOneInfosActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ModifierInfosActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ListAgentActivity"
-            android:exported="true" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
