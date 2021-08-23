@@ -9,10 +9,11 @@
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2921875" />
         <entry key="app/src/main/res/layout/activity_agent_one_infos.xml" value="0.1342451874366768" />
         <entry key="app/src/main/res/layout/activity_list_agent.xml" value="0.2609375" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2760416666666667" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15760869565217392" />
         <entry key="app/src/main/res/layout/activity_modifier_infos.xml" value="0.2760416666666667" />
         <entry key="app/src/main/res/layout/activity_progress_bar.xml" value="0.2609375" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2786458333333333" />
         <entry key="app/src/main/res/layout/activity_splash_screen_acivity.xml" value="0.15760869565217392" />
         <entry key="app/src/main/res/layout/activity_supprimer_infos.xml" value="0.2760416666666667" />
         <entry key="app/src/main/res/layout/agent_details_fragment.xml" value="0.19322916666666667" />
