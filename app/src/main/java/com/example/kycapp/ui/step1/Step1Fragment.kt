@@ -10,6 +10,7 @@ import com.example.kycapp.R
 
 class Step1Fragment : Fragment() {
 
+
     companion object {
         fun newInstance() = Step1Fragment()
     }
@@ -28,7 +29,6 @@ class Step1Fragment : Fragment() {
         viewModel = ViewModelProvider(this).get(Step1ViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 
 
 
