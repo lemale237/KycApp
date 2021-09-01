@@ -3,11 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color">
     tools:context=".ui.step1.Step1Fragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginTop="35dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:text="@string/filmer_recto"
+            android:gravity="center_horizontal"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:id="@+id/photo_prise_recto"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/group_18" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginTop="240dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:text="@string/filmer_verso"
+            android:gravity="center_horizontal"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:id="@+id/photo_prise_verso"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/group_18"
+            tools:ignore="DuplicateIds" />
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

@@ -1,6 +1,61 @@
 <resources>
-    <string name="app_name">KycApp</string>
+
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
+
+
+    <string name="app_name">smobilPay</string>
+    <string name="to">to</string>
+    <string name="subject">subject</string>
+    <string name="message">message</string>
+    <string name="launch_text">created by</string>
+    <string name="launch_text_enterprise">MAVIANCE PLC</string>
+    <string name="email_address">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="connexion">connexion</string>
+    <string name="etape_1">ETAPE 1</string>
+    <string name="etape_2">ETAPE 2</string>
+    <string name="etape_3">ETAPE 3</string>
+    <string name="etape_4">ETAPE 4</string>
+    <string name="prendre_photo">Prendre une photo</string>
+    <string name="title_activity_take_picture2">MainActivity</string>
+    <string name="title_formulaire">Formulaire</string>
+    <string name="title_agents">Agents</string>
     <string name="title_notifications">Notifications</string>
+    <string name="formulaire">Formulaire</string>
+    <string name="agents">Agents</string>
+    <string name="title_activity_take_picture_actuvity3">MainActivity</string>
+    <string name="title_activity_take_picture3">MainActivity</string>
+    <string name="name">Nom</string>
+    <string name="residence">Résidence</string>
+    <string name="numero_telephone">Numéro de téléphone</string>
+    <string name="lieu_naissance">Lieu de Naissance</string>
+    <string name="date_naissance">Date de naissance</string>
+    <string name="prenom">Prénom</string>
+    <string name="nom_entreprise_collecteur">Nom Entreprise du Collecteur</string>
+    <string name="numero_cni">Numéro CNI</string>
+    <string name="profession_agent">Profession de l\'agent</string>
+    <string name="activite">Activité</string>
+    <string name="capital_initial_agent">Capital initial de l\'agent</string>
+    <string name="source_financiere_agent">Source financière de l\'agent</string>
+    <string name="entreprise_agent">Entreprise de l\'agent</string>
+    <string name="smobilpay_id_utilisateur">Smibilpay ID utilisateur</string>
+    <string name="donnees_enregistree">Les données ont bien été enregistrées</string>
+    <string name="agents_enregistrer">Agents enregistrés</string>
+    <string name="search_bar">Recherche</string>
+    <string name="agent_1">Lebron James</string>
+    <string name="modifier">Modifier</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="main_menu">Menu principal</string>
+    <string name="donnees_supprimer">Agent supprimé</string>
+    <string name="donnees_modifier">Informations modifiées</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="filmer_recto">recto de la cni</string>
+    <string name="filmer_verso">verso de la cni</string>
+    <string name="Photo_point_de_vente">photo de l\'agent</string>
+    <string name="Photo_de_lagent">photo du point de vente</string>
+    <string name="next">Next</string>
+    <string name="previews">Previews</string>
+
+
 </resources>

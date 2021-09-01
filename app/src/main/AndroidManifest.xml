@@ -8,10 +8,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/Theme.KycApp">
         <activity
+            android:name=".ProgressBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SupprimerInfosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AgentOneInfosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ModifierInfosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ListAgentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".SplashScreenAcivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,6 +40,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:windowSoftInputMode="adjustPan"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

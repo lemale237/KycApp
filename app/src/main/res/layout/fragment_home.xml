@@ -18,22 +18,22 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Monday" />
+                android:text="Partie 1" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tuesday" />
+                android:text="Partie 2" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wednesday" />
+                android:text="Partie 3" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wednesday" />
+                android:text="Partie 4" />
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
@@ -50,7 +50,7 @@
         android:layout_margin="16dp"
         android:paddingHorizontal="8dp"
         android:paddingVertical="8dp"
-        android:text="next"
+        android:text="@string/previews"
         app:layout_constraintVertical_bias="0.9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         android:paddingHorizontal="8dp"
         android:paddingVertical="8dp"
         app:layout_constraintVertical_bias="0.9"
-        android:text="previews"
+        android:text="@string/next"
         android:id="@+id/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
