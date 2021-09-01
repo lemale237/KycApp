@@ -17,12 +17,6 @@ import com.example.kycapp.R
 
 class Step1Fragment : Fragment() {
 
-
-
-
-
-
-
     companion object {
         fun newInstance() = Step1Fragment()
     }
