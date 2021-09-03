@@ -39,5 +39,9 @@
         android:id="@+id/sucessRegistrationFragment"
         android:name="com.example.kycapp.ui.successRegistration.SucessRegistrationFragment"
         android:label="sucess_registration_fragment"
-        tools:layout="@layout/sucess_registration_fragment" />
+        tools:layout="@layout/sucess_registration_fragment" >
+        <action
+            android:id="@+id/action_sucessRegistrationFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
 </navigation>
