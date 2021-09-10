@@ -4,31 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background_color">
+    android:background="@color/background_color"><![CDATA[
     tools:context=".ui.step1.Step1Fragment">
+
+    ]]>
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:layout_marginTop="35dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:layout_gravity="center"
-            android:text="@string/filmer_recto"
             android:gravity="center_horizontal"
-            android:textSize="15dp"/>
-
+            android:text="@string/filmer_recto"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center">
         <ImageView
             android:id="@+id/PhotoRecto"
-            android:layout_width="match_parent"
+            android:layout_width="180dp"
             android:layout_height="180dp"
-            android:layout_marginTop="2dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/group_18" />
+    </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
@@ -48,15 +60,25 @@
             android:gravity="center_horizontal"
             android:textSize="15dp"/>
 
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center">
         <ImageView
             android:id="@+id/PhotoVerso"
-            android:layout_width="match_parent"
+            android:layout_width="180dp"
+            android:layout_gravity="center"
             android:layout_height="180dp"
-            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/group_18"
             tools:ignore="DuplicateIds" />
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
 
 
 

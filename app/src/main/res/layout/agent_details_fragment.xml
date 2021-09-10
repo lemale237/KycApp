@@ -55,7 +55,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/agent_1"
+                android:text="@string/num_ro_de_t_l_phone_691729395"
                 android:textColor="@color/white"
                 android:layout_marginBottom="10dp"
                 android:textSize="15sp"
@@ -63,25 +63,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/agent_1"
+                android:text="@string/r_sidence_ou_adresse_logbessou"
                 android:textColor="@color/white"
                 android:layout_marginBottom="10dp"
                 android:textSize="15sp"
                 android:textStyle="bold"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:text="@string/agent_1"
+                android:text="@string/nom_entreprise_du_collecteur_digital_post"
                 android:textColor="@color/white"
+                android:layout_marginBottom="10dp"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/agent_1"
+                android:text="@string/num_ro_cni_2017651949646561"
                 android:textColor="@color/white"
                 android:layout_marginBottom="10dp"
                 android:textSize="15sp"
