@@ -14,6 +14,8 @@ import com.example.kycapp.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
 
+    lateinit var img_agent_1 : ImageView;
+
     private lateinit var dashboardViewModel: DashboardViewModel
     private var _binding: FragmentDashboardBinding? = null
 
@@ -35,13 +37,29 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
 
         val textView: TextView = binding.agentsEnregistrer
+
         dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+//le root de la navigation
+        img_agent_1=root.findViewById(R.id.img_agent_1)
+
+
         return root
 
 
+    }
+//bouton fragment il manque le lien de la navigation vers la prochaine vue
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+
+        img_agent_1.setOnClickListener {
+
+
+
+        }
 
     }
 
