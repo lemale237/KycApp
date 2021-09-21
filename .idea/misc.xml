@@ -16,9 +16,12 @@
         <entry key="app/src/main/res/layout/activity_splash_screen_acivity.xml" value="0.15760869565217392" />
         <entry key="app/src/main/res/layout/activity_supprimer_infos.xml" value="0.2760416666666667" />
         <entry key="app/src/main/res/layout/agent_details_fragment.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/agent_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/dashboardxml.xml" value="0.3723958333333333" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/grid_item_view.xml" value="0.2" />
         <entry key="app/src/main/res/layout/modifier_infos_fragment.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/progress_bar_fragment.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/step1_fragment.xml" value="0.15081521739130435" />
