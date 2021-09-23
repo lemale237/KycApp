@@ -27,7 +27,7 @@
                 android:id="@+id/cardImages"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                app:srcCompat="@drawable/agent"
+                app:srcCompat="@drawable/aubin"
                 android:scaleType="centerCrop"/>
 
             <TextView
