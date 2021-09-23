@@ -38,7 +38,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/login_email"
             android:layout_width="230dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -54,7 +54,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:layout_width="230dp"
             android:layout_height="50dp"
             android:drawableEnd="@drawable/custom_lock_icon"

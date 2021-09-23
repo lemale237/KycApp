@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "207331218285",
+    "project_id": "smobilpaykycapp",
+    "storage_bucket": "smobilpaykycapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207331218285:android:2b1ddaec3c9cb655214064",
+        "android_client_info": {
+          "package_name": "com.example.kycapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207331218285-3gtq8p5a91ev86hibdkn4od8ualb1d01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHuQ3tkLfIFJgzaS_ye7H5_0jMLJpgLZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207331218285-3gtq8p5a91ev86hibdkn4od8ualb1d01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

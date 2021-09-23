@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Cardtitles">
+
+        <item>First Item</item>
+        <item>Second Item</item>
+        <item>Third Item</item>
+        <item>First Item</item>
+        <item>Second Item</item>
+        <item>Third Item</item>
+        <item>First Item</item>
+        <item>Second Item</item>
+        <item>Third Item</item>
+
+
+    </string-array>
+    
+</resources>

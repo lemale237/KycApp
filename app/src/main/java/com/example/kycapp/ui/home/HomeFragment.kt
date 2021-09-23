@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = "Step ${(position + 1)}"
         }.attach()
-//voici le sharabiya de Aubin.
+
     }
 
     private fun observeLiveData() {

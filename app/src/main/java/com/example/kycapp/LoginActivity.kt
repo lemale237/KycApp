@@ -4,15 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.kycapp.MainActivity
 import com.example.kycapp.R
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginActivity : AppCompatActivity() {
+
 
     private var btn_connexion: ImageView? = null
 
@@ -35,5 +39,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+
+
+        }
+
+
+
     }
-}

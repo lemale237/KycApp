@@ -8,6 +8,7 @@
     tools:context=".ui.step4.Step4Fragment">
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -93,22 +94,30 @@
             android:textColor="@color/white"
             android:textSize="13dp" />
 
+        <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:layout_height="120dp">
+
         <ImageView
             android:id="@+id/photoAgent"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            android:layout_marginTop="2dp"
             app:srcCompat="@drawable/group_18"
             tools:ignore="DuplicateIds" />
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="320dp"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
@@ -141,6 +150,7 @@
 
 
     </LinearLayout>
+
 
 
 
