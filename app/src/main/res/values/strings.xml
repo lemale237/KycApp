@@ -56,10 +56,14 @@
     <string name="Photo_de_lagent">photo point de vente</string>
     <string name="next">Next</string>
     <string name="previews">Previews</string>
-    <string name="num_ro_de_t_l_phone_691729395">Numéro de Telephone : 691729395</string>
-    <string name="r_sidence_ou_adresse_logbessou">Résidence ou Adresse : Logbessou</string>
-    <string name="nom_entreprise_du_collecteur_digital_post">Entreprise du collecteur : Digital Post</string>
-    <string name="num_ro_cni_2017651949646561">Numéro de la CNI : 201764986513165</string>
+    <string name="num_ro_de_t_l_phone_691729395">Numéro de Telephone : </string>
+    <string name="r_sidence_ou_adresse_logbessou">Résidence ou Adresse : </string>
+    <string name="nom_entreprise_du_collecteur_digital_post">Entreprise du collecteur : </string>
+    <string name="num_ro_cni_2017651949646561">Numéro de la CNI : </string>
+    <string name="phone_number">691729395</string>
+    <string name="logbessou">Logbessou</string>
+    <string name="entreprise">Digital Post</string>
+    <string name="_201764986513165">201764986513165</string>
 
 
 </resources>

@@ -34,6 +34,19 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
+
+        // Navigation entre fragment
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
