@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:layout_marginTop="240dp">
+        android:layout_marginTop="250dp">
 
         <TextView
             android:layout_width="match_parent"
