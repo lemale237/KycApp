@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.kycapp.ui.step1.Step1Fragment
-import com.example.kycapp.ui.step1.Step1ViewModel
 import com.example.kycapp.ui.step2.Step2Fragment
 import com.example.kycapp.ui.step3.Step3Fragment
 import com.example.kycapp.ui.step4.Step4Fragment

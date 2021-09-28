@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp">
@@ -23,7 +24,7 @@
             android:ems="10"
             android:hint="@string/name"
             android:inputType="text"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:drawableStart="@drawable/ic_account_login_custom"
             android:drawableLeft="@drawable/ic_account_login"
             android:drawablePadding="10dp"
@@ -42,7 +43,7 @@
             android:ems="10"
             android:hint="@string/prenom"
             android:inputType="text"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:drawableStart="@drawable/ic_account_login_custom"
             android:drawableLeft="@drawable/ic_account_login"
             android:drawablePadding="10dp"
@@ -62,7 +63,7 @@
             android:ems="10"
             android:hint="@string/date_naissance"
             android:inputType="text"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:drawableStart="@drawable/ic_calendar_custom"
             android:drawableLeft="@drawable/ic_calendar"
             android:drawablePadding="10dp"
@@ -82,7 +83,7 @@
             android:ems="10"
             android:hint="@string/lieu_naissance"
             android:inputType="text"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:drawableStart="@drawable/ic_location_custom"
             android:drawableLeft="@drawable/ic_location"
             android:drawablePadding="10dp"
@@ -119,7 +120,7 @@
                 android:hint="@string/numero_telephone"
                 android:phoneNumber="true"
                 android:inputType="phone"
-                android:textSize="14sp"
+                android:textSize="12sp"
 android:id="@+id/phoneNumber"
                 android:background="@null"
                 android:drawablePadding="10dp"
@@ -139,7 +140,7 @@ android:id="@+id/phoneNumber"
             android:ems="10"
             android:hint="@string/residence"
             android:inputType="text"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:drawableStart="@drawable/ic_home_custom"
             android:drawableLeft="@drawable/ic_home"
             android:drawablePadding="10dp"
@@ -153,7 +154,36 @@ android:id="@+id/phoneNumber"
     </LinearLayout>
 
 
+    <Button
+        android:id="@+id/previews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_margin="5dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="@string/previews"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_margin="5dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintVertical_bias="1"
+        android:text="@string/next"
+        android:id="@+id/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
-</FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

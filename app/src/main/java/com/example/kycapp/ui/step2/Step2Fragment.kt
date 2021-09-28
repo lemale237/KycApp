@@ -7,25 +7,38 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.example.kycapp.R
+import com.example.kycapp.databinding.FragmentHomeBinding
+import com.example.kycapp.ui.HomeFragmentViewModel
+import com.example.kycapp.ui.adapter.ViewPagerAdapter
+import com.example.kycapp.ui.home.HomeFragment
+import com.example.kycapp.ui.home.HomeFragment.Companion.generalPosition
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.hbb20.CountryCodePicker
 import kotlinx.android.synthetic.main.step2_fragment.*
 import java.util.*
-import javax.xml.datatype.DatatypeConstants.MONTHS
 
-class Step2Fragment : Fragment() ,CountryCodePicker.OnCountryChangeListener{
+class Step2Fragment : Fragment(), CountryCodePicker.OnCountryChangeListener {
+
+    private var ccp: CountryCodePicker? = null
+    private var countryCode: String? = null
+    private var countryName: String? = null
 
 
-    private var ccp: CountryCodePicker?=null
-    private var countryCode:String?=null
-    private var countryName:String?=null
+    private lateinit var birthDay : Date
+
 
     companion object {
         fun newInstance() = Step2Fragment()
     }
 
-    private lateinit var viewModel: Step2ViewModel
+    val model: HomeFragmentViewModel by activityViewModels<HomeFragmentViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,10 +47,10 @@ class Step2Fragment : Fragment() ,CountryCodePicker.OnCountryChangeListener{
         return inflater.inflate(R.layout.step2_fragment, container, false)
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(Step2ViewModel::class.java)
-        // TODO: Use the ViewModel
+
 
 
         date_naissance.setOnClickListener {
@@ -45,23 +58,79 @@ class Step2Fragment : Fragment() ,CountryCodePicker.OnCountryChangeListener{
             displayCallendar()
 
         }
+        onClickButton()
 
         ccp = country_code_picker
         ccp!!.setOnCountryChangeListener(this)
 //to set default country code as Japan
 
         ccp!!.setDefaultCountryUsingNameCode("CM")
-ccp?.registerCarrierNumberEditText(phoneNumber)
-
+        ccp?.registerCarrierNumberEditText(phoneNumber)
 
 
     }
 
 
+    // code cique du bouton terminé à succregistration
+    private fun onClickButton() {
+        next.setOnClickListener {
+            if(validatFields()){
+                generalPosition.value?.let {
+                    generalPosition.value = 2
+                }
+            }
+
+
+        }
+        previews.setOnClickListener {
+            generalPosition.value = 0
+        }
+    }
+
+    fun validatFields():Boolean{
+        var result = true
+        if(nom.text.toString().isEmpty() or nom.text.toString().isBlank()){
+            nom.error="required"
+            return  false
+        }else{
+            model.userToCreate.value!!.agentName=nom.text.toString()
+        }
+        if(prenom.text.isEmpty() or prenom.text.isBlank()){
+            prenom.error="required"
+            return  false
+        }else{
+            model.userToCreate.value!!.prenomAgent=prenom.text.toString()
+        }
+        if(!(this::birthDay.isInitialized)){
+            date_naissance.error= " choose a birthday"
+        }else{
+            model.userToCreate.value!!.dateNaissance=birthDay
+        }
+        if(lieu_naissance.text.isEmpty() or lieu_naissance.text.isBlank()){
+            lieu_naissance.error="required"
+            return  false
+        }else{
+            model.userToCreate.value!!.lieuNaissance=lieu_naissance.text.toString()
+        }
+        if(!(ccp!!.isValidFullNumber)){
+            phoneNumber.error="required"
+            return  false
+        }else{
+            model.userToCreate.value!!.phoneNumber=ccp!!.fullNumberWithPlus
+        }
+        if(residence.text.isEmpty() or residence.text.isBlank()){
+            residence.error="required"
+            return  false
+        }else{
+            model.userToCreate.value!!.residenceAgent=residence.text.toString()
+        }
+
+        return result
+    }
 
     override fun onCountrySelected() {
-        countryCode=ccp!!.selectedCountryCode
-        countryName=ccp!!.selectedCountryName
+        countryCode = ccp!!.selectedCountryCode
+        countryName = ccp!!.selectedCountryName
         ccp?.formattedFullNumber
 
     }
@@ -80,6 +149,7 @@ ccp?.registerCarrierNumberEditText(phoneNumber)
 
                 // Display Selected date in textbox
                 date_naissance.setText("" + dayOfMonth + "/" + monthOfYear + "/" + year)
+                birthDay = GregorianCalendar(year, month - 1, day).time
 
             },
             year,

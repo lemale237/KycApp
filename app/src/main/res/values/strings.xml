@@ -39,7 +39,7 @@
     <string name="capital_initial_agent">Capital initial de l\'agent</string>
     <string name="source_financiere_agent">Source financière de l\'agent</string>
     <string name="entreprise_agent">Entreprise de l\'agent</string>
-    <string name="smobilpay_id_utilisateur">Smibilpay ID utilisateur</string>
+    <string name="smobilpay_id_utilisateur">Smobilpay ID utilisateur</string>
     <string name="donnees_enregistree">Les données ont bien été enregistrées</string>
     <string name="agents_enregistrer">Agents enregistrés</string>
     <string name="search_bar">Recherche</string>
@@ -64,6 +64,7 @@
     <string name="logbessou">Logbessou</string>
     <string name="entreprise">Digital Post</string>
     <string name="_201764986513165">201764986513165</string>
+    <string name="Terminer">Terminer</string>
 
 
 </resources>

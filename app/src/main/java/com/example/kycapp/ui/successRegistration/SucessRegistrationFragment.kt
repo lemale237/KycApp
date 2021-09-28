@@ -13,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.kycapp.ui.LoginActivity
 import com.example.kycapp.ui.dashboard.DashboardFragment
+import com.example.kycapp.ui.home.HomeFragment
 
 
 class SucessRegistrationFragment : Fragment() {
@@ -37,8 +38,16 @@ class SucessRegistrationFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(SucessRegistrationViewModel::class.java)
         // TODO: Use the ViewModel
         super.onCreate(savedInstanceState)
+        HomeFragment.generalPosition.value?.let {
+            HomeFragment.generalPosition.value = 0
+        }
         Handler().postDelayed({
-         findNavController().navigate(R.id.action_sucessRegistrationFragment_to_navigation_dashboard)
+            try {
+                findNavController().navigate(R.id.action_sucessRegistrationFragment_to_navigation_dashboard)
+            } catch (e:Exception){
+
+            }
+
         }, 3000)
 
 
