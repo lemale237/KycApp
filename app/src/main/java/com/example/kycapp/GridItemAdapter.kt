@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kycapp.entites.Agent
+import com.example.kycapp.ui.dashboard.DashboardFragment
 import com.squareup.picasso.Picasso
+import java.lang.Exception
 
 
 class GridItemAdapter(private val agentList: ArrayList<Agent>) :
@@ -27,13 +29,17 @@ class GridItemAdapter(private val agentList: ArrayList<Agent>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.cardTitle.text = agentList[position].agentName
-        //Picasso.get().load(agentList[position].imageURL).into(holder.cardImages)
+         try{
+             Picasso.get().load(agentList[position].photoAgent).error(R.drawable.ic_baseline_broken_image_24).into(holder.cardImages)
+
+        }catch (e:Exception){
+
+        }
+        
 
         // Navigation
         holder.itemView.setOnClickListener {
-
             Navigation.findNavController(it).navigate(R.id.action_navigation_dashboard_to_agentDetailsFragment)
-
         }
 
         holder.itemView

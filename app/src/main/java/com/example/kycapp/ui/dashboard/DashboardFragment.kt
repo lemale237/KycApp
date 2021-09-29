@@ -1,16 +1,19 @@
 package com.example.kycapp.ui.dashboard
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kycapp.GridItemAdapter
 import com.example.kycapp.api.AgentApi
 import com.example.kycapp.databinding.FragmentDashboardBinding
+import com.example.kycapp.entites.Agent
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class DashboardFragment : Fragment() {
@@ -34,19 +37,7 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
-
         // Navigation entre fragment
-
-
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -54,17 +45,18 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val api = AgentApi()
-
-       val listDeMesAgent = api.listAgent()
-
-        val adapter = GridItemAdapter(listDeMesAgent)
-        val gridLayout = GridLayoutManager(requireContext(), 2)
-        gridItems.layoutManager = gridLayout
-        gridItems.adapter = adapter
-
-        binding.gridItems.adapter=adapter
-        binding.gridItems.layoutManager=gridLayout
-
+        api.listAgent({
+            Log.e("List OF AGENTS",it.toString())
+            val listDeMesAgent =it
+            val adapter = GridItemAdapter(listDeMesAgent as ArrayList<Agent>)
+            val gridLayout = GridLayoutManager(requireContext(), 2)
+            gridItems.layoutManager = gridLayout
+            gridItems.adapter = adapter
+            binding.gridItems.adapter=adapter
+            binding.gridItems.layoutManager=gridLayout
+        },{
+            Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
+        })
 
     }
 

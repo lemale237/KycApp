@@ -35,9 +35,10 @@
         android:name="com.example.kycapp.ui.agentDetails.AgentDetailsFragment"
         android:label="agent_details_fragment"
         tools:layout="@layout/agent_details_fragment" >
-        <action
-            android:id="@+id/action_agentDetailsFragment_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
+        <argument
+            android:name="agent"
+            app:argType="com.example.kycapp.entites.Agent"
+            />
     </fragment>
     <fragment
         android:id="@+id/sucessRegistrationFragment"
