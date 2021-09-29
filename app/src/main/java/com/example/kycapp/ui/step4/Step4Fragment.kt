@@ -4,9 +4,11 @@ import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,23 +16,28 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.kycapp.R
-import com.example.kycapp.databinding.FragmentHomeBinding
+import com.example.kycapp.api.AgentApi
+import com.example.kycapp.entites.Agent
+
 import com.example.kycapp.ui.HomeFragmentViewModel
 import com.example.kycapp.ui.adapter.ViewPagerAdapter
 import com.example.kycapp.ui.home.HomeFragment
 import com.example.kycapp.ui.home.HomeFragment.Companion.generalPosition
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.android.synthetic.main.step1_fragment.*
 import kotlinx.android.synthetic.main.step4_fragment.*
+import kotlinx.android.synthetic.main.step4_fragment.next
+import kotlinx.android.synthetic.main.step4_fragment.progress_Bar_upload
 
 class Step4Fragment : Fragment() {
 
-    private lateinit var photoAgent: ImageView
-    private lateinit var photoVente: ImageView
     var imageFront=""
     var imageBack=""
     val REQUEST_IMAGE_CAPTURE = 1
@@ -52,9 +59,6 @@ class Step4Fragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        photoAgent = requireView().findViewById(R.id.photoAgent)
-        photoVente = requireView().findViewById(R.id.photoVente)
         photoAgent.setOnClickListener {
             isRecto =true
             callCamera()
@@ -67,28 +71,54 @@ class Step4Fragment : Fragment() {
     }
 
     private fun callCamera() {
-
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        try {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-        } catch (e: ActivityNotFoundException) {
-            // display error state to the user
-        }
+        ImagePicker.with(this)
+            .crop()	    			//Crop image(Optional), Check Customization for more option
+            .compress(1024)			//Final image size will be less than 1 MB(Optional)
+            .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+            .start()
 
     }
 
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            val imageBitmap = data?.extras?.get("data") as Bitmap
+        if (resultCode == Activity.RESULT_OK) {
+            //Image Uri will not be null for RESULT_OK
+            val uri: Uri = data?.data!!
+            val api = AgentApi()
             if (isRecto){
-                photoAgent.setImageBitmap(imageBitmap)
-                imageFront=data.data.toString()
-                model.userToCreate.value!!.photoAgent=data.data.toString()
+                photoAgent.setImageURI(uri)
+                progress_Bar_upload.isVisible=true
+
+                api.uploadFile(uri,{
+                    imageFront=it
+                    progress_Bar_upload.isVisible=false
+                    model.userToCreate.value!!.photoAgent=it
+                    Toast.makeText(requireContext(),"upload succeeded",Toast.LENGTH_LONG).show()
+                    Log.e("imqge agent",it)
+                },{
+                    progress_Bar_upload.isVisible=false
+                    Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
+                })
+
             }else{
-                photoVente.setImageBitmap(imageBitmap)
-                imageBack=data.data.toString()
-                model.userToCreate.value!!.photoPointVente=data.data.toString()
+                photoVente.setImageURI(uri)
+                progress_Bar_upload.isVisible=true
+                api.uploadFile(uri,{
+                    imageBack=uri.toString()
+                    progress_Bar_upload.isVisible=false
+                    Toast.makeText(requireContext(),"upload succeeded",Toast.LENGTH_LONG).show()
+                    Log.e("imqge point de vente",it)
+                    model.userToCreate.value!!.photoPointVente=it
+                },{
+                    progress_Bar_upload.isVisible=false
+                    Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
+                })
             }
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            Toast.makeText(requireContext(), ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "Task Cancelled", Toast.LENGTH_SHORT).show()
         }
     }
 

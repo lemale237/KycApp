@@ -1,7 +1,10 @@
 package com.example.kycapp.api
 
+import android.net.Uri
 import com.example.kycapp.MainActivity
+import com.example.kycapp.MainActivity.Companion.storage
 import com.example.kycapp.entites.Agent
+import java.io.File
 
 class AgentApi {
     val db = MainActivity.db
@@ -37,6 +40,26 @@ class AgentApi {
 
             }
 
+        }
+
+    }
+
+    fun uploadFile(imageUri: Uri,onSuccess: (path:String) -> Unit,onFailure: (message: String) -> Unit){
+        // Create a storage reference from our app
+        val storageRef = storage.reference
+        var file = imageUri
+        val riversRef = storageRef.child("images/${file.lastPathSegment}")
+      var   uploadTask = riversRef.putFile(file)
+// Register observers to listen for when the download is done or if it fails
+        uploadTask.addOnFailureListener {
+            // Handle unsuccessful uploads
+            onFailure(it.message!!)
+        }.addOnSuccessListener { taskSnapshot ->
+            // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
+            // ...
+            riversRef.downloadUrl.addOnSuccessListener {url->
+                onSuccess(url.toString())
+            }
         }
 
     }

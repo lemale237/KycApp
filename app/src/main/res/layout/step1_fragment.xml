@@ -9,6 +9,7 @@
 
     ]]>
 
+
 <androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
     app:layout_constraintTop_toTopOf="parent"
@@ -105,7 +106,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <ProgressBar
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/progress_Bar_upload"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"></ProgressBar>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

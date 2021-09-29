@@ -1,9 +1,12 @@
 package com.example.kycapp.ui.step1
 
+import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
+import android.icu.number.NumberFormatter.with
+import android.icu.number.NumberRangeFormatter.with
 import android.net.Uri
 
 import androidx.lifecycle.ViewModelProvider
@@ -15,26 +18,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+
 import android.widget.ImageView
-import android.widget.ProgressBar
+
 import android.widget.Toast
 import androidx.core.view.isVisible
+
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
-import com.example.kycapp.MainActivity
+
 import com.example.kycapp.R
-import com.example.kycapp.databinding.FragmentHomeBinding
+import com.example.kycapp.api.AgentApi
+
 import com.example.kycapp.ui.HomeFragmentViewModel
-import com.example.kycapp.ui.adapter.ViewPagerAdapter
-import com.example.kycapp.ui.home.HomeFragment
 import com.example.kycapp.ui.home.HomeFragment.Companion.generalPosition
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
+import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.step1_fragment.*
-import kotlin.math.log
+import kotlinx.android.synthetic.main.step1_fragment.next
+import kotlinx.android.synthetic.main.step1_fragment.progress_Bar_upload
+import kotlinx.android.synthetic.main.step4_fragment.*
+
 
 class Step1Fragment : Fragment() {
 
@@ -80,37 +82,57 @@ class Step1Fragment : Fragment() {
             callCamera()
         }
 
+
     }
 
     private fun callCamera() {
-
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        try {
-            val uri = Uri.parse("file://somewhere_that_you_choose")
-            val photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            photoIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-        } catch (e: ActivityNotFoundException) {
-            // display error state to the user
-        }
-
+        ImagePicker.with(this)
+            .crop()	    			//Crop image(Optional), Check Customization for more option
+            .compress(1024)			//Final image size will be less than 1 MB(Optional)
+            .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+            .start()
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            var uri= data?.extras?.get("uri")
-            val imageBitmap = data?.extras?.get("data") as Bitmap
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            //Image Uri will not be null for RESULT_OK
+            val uri: Uri = data?.data!!
+            val api = AgentApi()
             if (isRecto){
-                recto.setImageBitmap(imageBitmap)
-                imageFront=uri.toString()
-                Log.e("imqge front",data.data.toString())
+                recto.setImageURI(uri)
+              progress_Bar_upload.isVisible=true
+                api.uploadFile(uri,{
+                    imageFront=it
+                    progress_Bar_upload.isVisible=false
+                    model.userToCreate.value!!.imageRecto=it
+                    Toast.makeText(requireContext(),"upload succeeded",Toast.LENGTH_LONG).show()
+                    Log.e("imqge recto",it)
+                },{
+                    progress_Bar_upload.isVisible=false
+                    Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
+                })
+
             }else{
-                verso.setImageBitmap(imageBitmap)
-                imageBack=uri.toString()
-                Log.e("imqge front",data.data.toString())
+                verso.setImageURI(uri)
+                progress_Bar_upload.isVisible=true
+                api.uploadFile(uri,{
+                    imageBack=uri.toString()
+                    progress_Bar_upload.isVisible=false
+                    model.userToCreate.value!!.imageVerso=it
+                    Toast.makeText(requireContext(),"upload succeeded",Toast.LENGTH_LONG).show()
+                    Log.e("imqge verso",it)
+                },{
+                    progress_Bar_upload.isVisible=false
+                    Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
+                })
             }
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            Toast.makeText(requireContext(), ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "Task Cancelled", Toast.LENGTH_SHORT).show()
         }
     }
 

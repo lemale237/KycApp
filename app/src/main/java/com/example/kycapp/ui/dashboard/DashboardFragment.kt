@@ -1,6 +1,7 @@
 package com.example.kycapp.ui.dashboard
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,19 +37,7 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
-
         // Navigation entre fragment
-
-
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -57,6 +46,7 @@ class DashboardFragment : Fragment() {
 
         val api = AgentApi()
         api.listAgent({
+            Log.e("List OF AGENTS",it.toString())
             val listDeMesAgent =it
             val adapter = GridItemAdapter(listDeMesAgent as ArrayList<Agent>)
             val gridLayout = GridLayoutManager(requireContext(), 2)

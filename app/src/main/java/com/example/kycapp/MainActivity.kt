@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.kycapp.databinding.ActivityMainBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         val db = Firebase.firestore
+       val storage = Firebase.storage
 
     }
 

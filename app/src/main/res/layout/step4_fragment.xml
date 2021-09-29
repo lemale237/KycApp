@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/smobilpay_id_utilisateur"
-            android:inputType="number"
+            android:inputType="text"
             android:textSize="14sp"
             android:drawableStart="@drawable/ic_cni_custom"
             android:drawableLeft="@drawable/ic_cni"
@@ -166,7 +166,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+<ProgressBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    android:visibility="invisible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:id="@+id/progress_Bar_upload"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
 
 
 

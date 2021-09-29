@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
-    tools:context=".InfosOneAgentActivity">
+    android:background="@color/background_color">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,8 +54,8 @@
             android:layout_marginVertical="8dp"
             android:background="@color/background_color"
             app:cardBackgroundColor="@color/background_color"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp">
+            app:cardCornerRadius="8dp"
+          >
 
 
             <LinearLayout
@@ -58,12 +66,12 @@
                 >
 
                 <ImageView
-
                     android:id="@+id/cardImages"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/aubin" />
+                    app:srcCompat="@drawable/ic_baseline_image_24"
+                     />
 
                 <TextView
                     android:id="@+id/cardTitle"
@@ -90,9 +98,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="start"
-                android:text="@string/num_ro_de_t_l_phone_691729395"
+                android:textStyle="italic"
+                android:text="@string/date_naissance"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -102,7 +111,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/phone_number"
+                android:text="@string/date"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -117,7 +126,64 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="@string/r_sidence_ou_adresse_logbessou"
+                android:textStyle="italic"
+                android:text="@string/lieu_naissance"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/douala"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textStyle="italic"
+                android:text="@string/numero_telephone"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/phone_number"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/residence"
+                android:textStyle="italic"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -131,6 +197,7 @@
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
+
         </LinearLayout>
 
         <LinearLayout
@@ -143,7 +210,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="@string/nom_entreprise_du_collecteur_digital_post"
+                android:textStyle="italic"
+                android:text="@string/nom_entreprise_collecteur"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -153,7 +221,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/entreprise"
+                android:text="@string/digitalPost"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -171,6 +239,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
+                android:textStyle="italic"
                 android:text="@string/num_ro_cni_2017651949646561"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
@@ -188,7 +257,345 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textStyle="italic"
+                android:text="@string/profession_agent"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/Medecin"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textStyle="italic"
+                android:text="@string/activite"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/Vendeur"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textStyle="italic"
+                android:text="@string/capital_initial_agent"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/capital_initial_500000"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textStyle="italic"
+                android:text="@string/source_financiere_agent"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/don"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textStyle="italic"
+                android:text="@string/entreprise_agent"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/digitalPost"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textStyle="italic"
+                android:text="@string/smobilpay_id_utilisateur"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/smobilpay4569"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Photo_point_de_vente"
+                    android:textColor="@color/white"
+                    android:layout_gravity="start"
+                    android:textSize="13dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="120dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="start"
+                    android:layout_height="120dp">
+
+                    <ImageView
+                        android:id="@+id/cni_verso"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/group_18"
+                        tools:ignore="DuplicateIds" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Photo_point_de_vente"
+                    android:textColor="@color/white"
+                    android:layout_gravity="start"
+                    android:textSize="13dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="120dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="start"
+                    android:layout_height="120dp">
+
+                    <ImageView
+                        android:id="@+id/cni_recto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/group_18"
+                        tools:ignore="DuplicateIds" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginVertical="8dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Photo_point_de_vente"
+                    android:textColor="@color/white"
+                    android:layout_gravity="start"
+                    android:textSize="13dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="120dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="start"
+                    android:layout_height="120dp">
+
+                    <ImageView
+                        android:id="@+id/photoAgent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/group_18"
+                        tools:ignore="DuplicateIds" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Photo_point_de_vente"
+                    android:textColor="@color/white"
+                    android:layout_gravity="start"
+                    android:textSize="13dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="120dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="start"
+                    android:layout_height="120dp">
+
+                    <ImageView
+                        android:id="@+id/photopos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/group_18"
+                        tools:ignore="DuplicateIds" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+
+
+
     </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 
 

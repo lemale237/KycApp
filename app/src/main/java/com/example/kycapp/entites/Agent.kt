@@ -1,8 +1,10 @@
 package com.example.kycapp.entites
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.util.*
 
-
+@Parcelize
 data class Agent(
     val imageURL: String,
     var agentName: String,
@@ -23,7 +25,7 @@ data class Agent(
     var smobilpayIdUtilisateur: String,
     var photoAgent: String,
     var photoPointVente: String
-) {
+):Parcelable {
     constructor() : this(
         "",
         "",
