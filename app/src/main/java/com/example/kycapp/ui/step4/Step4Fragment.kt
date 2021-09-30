@@ -133,7 +133,9 @@ class Step4Fragment : Fragment() {
     private fun onClickButton() {
         next.setOnClickListener {
             if(validateFields()){
+                progress_Bar_submission.isVisible=true
                 model.createAgent({
+                    progress_Bar_submission.isVisible=false
                     generalPosition.value?.let {
                         findNavController().navigate(R.id.action_navigation_home_to_sucessRegistrationFragment)
                     }

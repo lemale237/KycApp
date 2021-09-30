@@ -111,6 +111,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:gravity="end"
+                android:id="@+id/birht_day_value"
                 android:text="@string/date"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
@@ -138,6 +139,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/douala"
+                android:id="@+id/birth_place_value"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -165,6 +167,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/phone_number"
+                android:id="@+id/phone_number_value"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -194,6 +197,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/logbessou"
+                android:id="@+id/living_place_value"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -223,6 +227,7 @@
                 android:gravity="end"
                 android:text="@string/digitalPost"
                 android:textColor="@color/white"
+                android:id="@+id/cc_value"
                 android:textSize="15sp" />
 
 
@@ -251,6 +256,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/_201764986513165"
+                android:id="@+id/id_card_value"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -279,6 +285,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/Medecin"
+                android:id="@+id/agent_preffession_value"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -307,6 +314,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:gravity="end"
+                android:id="@+id/activity_value"
                 android:text="@string/Vendeur"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
@@ -336,6 +344,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/capital_initial_500000"
+                android:id="@+id/initial_deposit_value"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -364,6 +373,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:gravity="end"
+                android:id="@+id/finance_source"
                 android:text="@string/don"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
@@ -393,6 +403,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/digitalPost"
+                android:id="@+id/cc_company_value"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -421,6 +432,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:gravity="end"
+                android:id="@+id/smobilpay_user_id"
                 android:text="@string/smobilpay4569"
                 android:textColor="@color/white"
                 android:textSize="15sp" />

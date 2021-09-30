@@ -5,15 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kycapp.entites.Agent
 import com.example.kycapp.ui.dashboard.DashboardFragment
+import com.example.kycapp.ui.dashboard.DashboardViewModel
 import com.squareup.picasso.Picasso
 import java.lang.Exception
 
 
-class GridItemAdapter(private val agentList: ArrayList<Agent>) :
+class GridItemAdapter(private val agentList: ArrayList<Agent>,var onAgentSelected:(agent:Agent)->Unit) :
     RecyclerView.Adapter<GridItemAdapter.ViewHolder>() {
 
 
@@ -39,6 +41,7 @@ class GridItemAdapter(private val agentList: ArrayList<Agent>) :
 
         // Navigation
         holder.itemView.setOnClickListener {
+            onAgentSelected(agentList[position])
             Navigation.findNavController(it).navigate(R.id.action_navigation_dashboard_to_agentDetailsFragment)
         }
 
