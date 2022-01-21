@@ -49,4 +49,8 @@
             android:id="@+id/action_sucessRegistrationFragment_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
     </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.kycapp.ui.map.MapFragment"
+        android:label="MapFragment" />
 </navigation>

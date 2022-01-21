@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/login"
+    android:id="@+id/authentication_nav_graph">
+
+    <fragment android:id="@+id/login"
+        android:label="Login"
+        android:name="com.store.mapapp.ui.authentication.login.LoginFragment">
+        <action
+            android:id="@+id/action_login_to_completeProfile"
+            app:destination="@id/completeProfile" />
+        <action
+            android:id="@+id/action_login_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <fragment android:name="com.store.mapapp.ui.authentication.register.CompleteProfileFragment"
+        android:label="Complete your Profile"
+        android:id="@+id/completeProfile">
+        <action
+            android:id="@+id/action_completeProfile_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <activity android:name="com.store.mapapp.MainActivity"
+        android:id="@+id/mainActivity"
+        android:label="main Activity"/>
+
+</navigation>

@@ -5,17 +5,17 @@
     android:layout_height="match_parent"
     android:background="@color/purple_700"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-    <ImageView
-        android:layout_width="0dp"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/top_background"
-        android:src="@drawable/ic_intersection"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_height="wrap_content"/>
+    tools:context=".ui.authentication.login.LoginFragment">
+<ImageView
+    android:layout_width="0dp"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.9"
+    app:layout_constraintTop_toTopOf="parent"
+    android:id="@+id/top_background"
+    android:src="@drawable/ic_intersection"
+    android:scaleType="centerCrop"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_height="wrap_content"/>
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -45,7 +45,7 @@
         android:layout_height="70dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="64dp"
-        android:id="@+id/login_email"
+        android:id="@+id/email_text"
         android:hint="rock@email.com"
         android:paddingHorizontal="16dp"
         android:textColor="@color/purple_500"
@@ -58,19 +58,18 @@
         android:layout_height="70dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="16dp"
-        android:hint="******"
-        android:id="@+id/login_password"
-        android:inputType="textPassword"
+        android:hint="rock@email.com"
+        android:id="@+id/password_text"
         android:paddingHorizontal="16dp"
         android:textColor="@color/purple_500"
         android:textColorHint="@color/purple_500"
         android:background="@drawable/rectangle_with_rounded_shape"
-        app:layout_constraintTop_toBottomOf="@+id/login_email"
+        app:layout_constraintTop_toBottomOf="@+id/email_text"
         tools:layout_editor_absoluteX="16dp" />
     <TextView
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/login_password"
-        app:layout_constraintEnd_toEndOf="@id/login_password"
+        app:layout_constraintTop_toBottomOf="@+id/password_text"
+        app:layout_constraintEnd_toEndOf="@id/password_text"
         android:layout_marginVertical="16dp"
         android:text="Forgot password?"
         android:id="@+id/forgot_pass_btn"
@@ -99,23 +98,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:textColor="@color/white"
         android:textSize="25sp"
-        android:id="@+id/btn_connexion"
+        android:id="@+id/login_btn"
         android:src="@drawable/ic_baseline_arrow_right_alt_24"
         android:layout_height="60dp"
         app:tint="@color/white" />
-    <ProgressBar
-        android:id="@+id/progress_Bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
 
-
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

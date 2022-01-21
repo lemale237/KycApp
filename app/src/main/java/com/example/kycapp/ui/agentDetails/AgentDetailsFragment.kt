@@ -60,9 +60,6 @@ class AgentDetailsFragment : Fragment() {
                 finance_source.text=it.sourceFinancièreAgent?:"N/a"
                 cc_company_value.text=it.nomEntrepriseCollecteur?:"N/a"
                 smobilpay_user_id.text=it.smobilpayIdUtilisateur?:"N/a"
-
-
-
             }
         })
     }

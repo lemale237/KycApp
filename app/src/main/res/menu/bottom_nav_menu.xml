@@ -9,4 +9,9 @@
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_account"
         android:title="@string/agents" />
+
+    <item
+        android:id="@+id/mapFragment"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="@string/map" />
 </menu>

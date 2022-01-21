@@ -1,8 +1,12 @@
 <resources>
 
+
+
+
+
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-
+    <string name="sign_in">Sign In</string>
 
     <string name="app_name">smobilPay</string>
     <string name="to">to</string>
@@ -73,6 +77,8 @@
     <string name="capital_initial_500000">500000</string>
     <string name="don">Don</string>
     <string name="smobilpay4569">smobilpay4569</string>
+    <string name="sign_up">Signup</string>
+    <string name="map">Map</string>
 
 
 </resources>

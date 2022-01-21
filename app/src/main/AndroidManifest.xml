@@ -4,6 +4,12 @@
     package="com.example.kycapp">
 
     <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!-- Always include this permission -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -21,7 +27,12 @@
            android:name=".ui.LoginActivity"
            android:exported="true">
        </activity>
-
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDy3wjkHs1KBxXvKlxRWVbAhJ5Yf0XMxiw" />
 
         <activity
             android:name=".SplashScreenAcivity"

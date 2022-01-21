@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'com.google.gms.google-services'
     id 'kotlin-android-extensions'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+
 }
 
 android {
@@ -42,6 +44,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.google.firebase:firebase-firestore-ktx:23.0.3'
     implementation 'com.google.android.gms:play-services-cast-framework:20.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     dependencies {
         // Import the BoM for the Firebase platform
@@ -69,5 +75,7 @@ dependencies {
         // Declare the dependency for the Cloud Storage library
         // When using the BoM, you don't specify versions in Firebase library dependencies
         implementation 'com.google.firebase:firebase-storage-ktx'
+        implementation 'com.google.android.libraries.places:places:2.1.0'
+        implementation 'com.google.android.gms:play-services-maps:18.0.2'
     }
     }

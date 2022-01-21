@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/circular_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2921875" />
+        <entry key="app/src/main/res/drawable-v24/rectangle_with_rounded_shape.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/background_button.xml" value="0.2921875" />
         <entry key="app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.22291666666666668" />
+        <entry key="app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2921875" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2921875" />
         <entry key="app/src/main/res/layout/activity_agent_one_infos.xml" value="0.1342451874366768" />
+        <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_list_agent.xml" value="0.2609375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2155688622754491" />
+        <entry key="app/src/main/res/layout/activity_login_old.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15760869565217392" />
         <entry key="app/src/main/res/layout/activity_modifier_infos.xml" value="0.2760416666666667" />
         <entry key="app/src/main/res/layout/activity_progress_bar.xml" value="0.2609375" />
@@ -18,11 +23,14 @@
         <entry key="app/src/main/res/layout/activity_supprimer_infos.xml" value="0.2760416666666667" />
         <entry key="app/src/main/res/layout/agent_details_fragment.xml" value="0.33" />
         <entry key="app/src/main/res/layout/agent_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/authentication_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dashboardxml.xml" value="0.3723958333333333" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/grid_item_view.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/login_fragment.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/map_fragment.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/modifier_infos_fragment.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/progress_bar_fragment.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/step1_fragment.xml" value="0.33" />
@@ -31,12 +39,12 @@
         <entry key="app/src/main/res/layout/step4_fragment.xml" value="0.22" />
         <entry key="app/src/main/res/layout/sucess_registration_fragment.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/supprimer_infos_fragment.xml" value="0.18229166666666666" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="app/src/main/res/xml/file_paths.xml" value="0.16259057971014493" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

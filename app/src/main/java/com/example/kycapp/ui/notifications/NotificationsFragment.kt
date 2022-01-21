@@ -10,36 +10,42 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.kycapp.R
 import com.example.kycapp.databinding.FragmentNotificationsBinding
+import com.example.kycapp.ui.map.MapFragment
+import com.example.kycapp.ui.map.MapViewModel
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
-class NotificationsFragment : Fragment() {
+class NotificationsFragment  : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    companion object {
+        fun newInstance() = MapFragment()
+    }
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private lateinit var viewModel: MapViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
-
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        return inflater.inflate(R.layout.map_fragment, container, false)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(MapViewModel::class.java)
+        val mapFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.map_fragment_map) as SupportMapFragment
+        mapFragment.getMapAsync {
+            // Add a marker in Sydney and move the camera
+            val sydney = LatLng(-34.0, 151.0)
+            it.addMarker(
+                MarkerOptions()
+                    .position(sydney)
+                    .title("Marker in Sydney")
+            )
+            it.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        }
     }
+
 }
