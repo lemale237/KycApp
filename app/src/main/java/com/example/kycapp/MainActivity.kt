@@ -8,6 +8,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.room.Room
+import com.example.kycapp.dao.AppDatabase
 import com.example.kycapp.databinding.ActivityMainBinding
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     companion object {
         val db = Firebase.firestore
+        lateinit var rooMdb: AppDatabase
         val storage = Firebase.storage
         var googleMap = MutableLiveData<GoogleMap>().apply {
             value = null
@@ -41,6 +44,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         // menu should be considered as top level destinations.
 
         navView.setupWithNavController(navController)
+        rooMdb = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "database-name"
+        ).build()
     }
 
     override fun onMapReady(p0: GoogleMap) {

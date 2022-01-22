@@ -2,7 +2,7 @@
 <resources>
 
     <color name="red">#e00606</color>
-    <color name="background_color">#15476D</color>
+    <color name="background_color">#21222D</color>
     <color name="launch_text_color">#6C63FF</color>
     <color name="enterprise_name">#ffffff</color>
 

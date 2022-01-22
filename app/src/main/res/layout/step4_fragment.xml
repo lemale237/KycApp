@@ -26,6 +26,7 @@
             android:ems="10"
             android:hint="@string/entreprise_agent"
             android:inputType="text"
+            android:textColorHint="@color/purple_500"
             android:textSize="14sp"
             android:drawableStart="@drawable/ic_entreprise_custom"
             android:drawableLeft="@drawable/ic_entreprise"
@@ -46,6 +47,7 @@
             android:hint="@string/smobilpay_id_utilisateur"
             android:inputType="text"
             android:textSize="14sp"
+            android:textColorHint="@color/purple_500"
             android:drawableStart="@drawable/ic_cni_custom"
             android:drawableLeft="@drawable/ic_cni"
             android:drawablePadding="10dp"
@@ -75,7 +77,7 @@
             android:layout_gravity="center"
             android:gravity="center_horizontal"
             android:text="@string/Photo_point_de_vente"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_500"
             android:textSize="13dp" />
 
         <androidx.cardview.widget.CardView
@@ -112,7 +114,7 @@
             android:layout_gravity="center"
             android:gravity="center_horizontal"
             android:text="@string/Photo_de_lagent"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_500"
             android:textSize="13dp" />
 
         <androidx.cardview.widget.CardView
