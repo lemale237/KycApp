@@ -17,7 +17,11 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 
-
+/**
+ * Login activity
+ *
+ * @constructor Create empty Login activity
+ */
 class LoginActivity : AppCompatActivity() {
 
     private val TAG = "MainActivity"
@@ -31,23 +35,58 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        auth = Firebase.auth
-        progressBar = findViewById<View>(R.id.progress_Bar) as ProgressBar
-        btn_connexion = findViewById<View>(R.id.btn_connexion) as ImageView
-        btn_connexion!!.setOnClickListener {
-            var password=login_password.text.toString()
-            var login=login_email.text.toString()
-            if (password.isNotEmpty() and login.isNotEmpty() ){
-                progressBar.isVisible = true
-                signIn(login,password)
-            }else{
-                Toast.makeText(this,"are you foul ? put the email and the password there !!!",Toast.LENGTH_LONG).show()
-            }
-
-        }
+        variableIniotializations()
+        onClickListeners()
 
     }
 
+    /**
+     * Variable iniotializations
+     *
+     */
+    private fun variableIniotializations() {
+        auth = Firebase.auth
+        progressBar = findViewById<View>(R.id.progress_Bar) as ProgressBar
+        btn_connexion = findViewById<View>(R.id.btn_connexion) as ImageView
+    }
+
+    private fun onClickListeners() {
+        btn_connexion!!.setOnClickListener {
+            SigninAction()
+
+        }
+
+        sign_up_btn.setOnClickListener {
+            signupAction()
+        }
+    }
+
+    /**
+     * Signin action
+     *
+     */
+    private fun SigninAction() {
+        var password = login_password.text.toString()
+        var login = login_email.text.toString()
+        if (password.isNotEmpty() and login.isNotEmpty()) {
+            progressBar.isVisible = true
+            signIn(login, password)
+        } else {
+            Toast.makeText(
+                this,
+                "are you foul ? put the email and the password there !!!",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    private fun signupAction() {
+        Toast.makeText(
+            this,
+            resources.getText(R.string.feature_to_be_implemented),
+            Toast.LENGTH_LONG
+        ).show()
+    }
 
 
     // [START on_start_check_user]

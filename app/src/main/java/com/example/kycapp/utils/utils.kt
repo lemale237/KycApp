@@ -7,6 +7,12 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 object utils {
+    /**
+     * Date formater
+     *
+     * @param date
+     * @return
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     fun dateFormater(date: Date):String{
         val localDateTime: LocalDateTime = LocalDateTime.parse(date.toString())

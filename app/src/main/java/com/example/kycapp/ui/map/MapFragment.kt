@@ -21,6 +21,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.example.kycapp.MainActivity
 import com.example.kycapp.R
 import com.example.kycapp.utils.utils
@@ -33,6 +34,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.map_fragment.*
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -168,6 +171,19 @@ class MapFragment : Fragment() {
         getLastLocation()
         viewModel.getAllLocation(requireContext())
         initLocations()
+        viewModel.getAgent(requireContext())
+        viewModel.agent.observe(viewLifecycleOwner, Observer {
+            user_name.setText(it.agentName)
+            user_email.setText(it.phoneNumber)
+            Log.e("Gozem",it.toString())
+            if(it.photoAgent!=null && it.photoAgent!="" ){
+               // Picasso.get().load(it.photoAgent).error(R.drawable.ic_baseline_broken_image_24).into(profileImage)
+                Glide.with(requireContext()).load(it.photoAgent).circleCrop().error(R.drawable.ic_baseline_broken_image_24).into(profileImage)
+            }
+
+
+        })
+
 
     }
 

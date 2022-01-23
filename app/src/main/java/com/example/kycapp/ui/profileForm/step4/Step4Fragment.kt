@@ -1,48 +1,29 @@
-package com.example.kycapp.ui.step1
+package com.example.kycapp.ui.profileForm.step4
 
 import android.app.Activity
-import android.app.Activity.RESULT_OK
-import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.graphics.Bitmap
-import android.icu.number.NumberFormatter.with
-import android.icu.number.NumberRangeFormatter.with
 import android.net.Uri
-
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.os.Handler
-import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import android.widget.ImageView
-
 import android.widget.Toast
 import androidx.core.view.isVisible
-
 import androidx.fragment.app.activityViewModels
-
+import androidx.navigation.fragment.findNavController
 import com.example.kycapp.R
 import com.example.kycapp.api.AgentApi
 
-import com.example.kycapp.ui.HomeFragmentViewModel
-import com.example.kycapp.ui.home.HomeFragment.Companion.generalPosition
+import com.example.kycapp.ui.profileForm.HomeFragmentViewModel
+import com.example.kycapp.ui.profileForm.HomeFragment.Companion.generalPosition
 import com.github.dhaval2404.imagepicker.ImagePicker
-import kotlinx.android.synthetic.main.step1_fragment.*
-import kotlinx.android.synthetic.main.step1_fragment.next
-import kotlinx.android.synthetic.main.step1_fragment.progress_Bar_upload
 import kotlinx.android.synthetic.main.step4_fragment.*
+import kotlinx.android.synthetic.main.step4_fragment.next
+import kotlinx.android.synthetic.main.step4_fragment.progress_Bar_upload
 
-
-class Step1Fragment : Fragment() {
-
-
-    private lateinit var recto: ImageView
-    private lateinit var verso: ImageView
+class Step4Fragment : Fragment() {
 
     var imageFront=""
     var imageBack=""
@@ -51,7 +32,7 @@ class Step1Fragment : Fragment() {
     private var isRecto = true
 
     companion object {
-        fun newInstance() = Step1Fragment()
+        fun newInstance() = Step4Fragment()
     }
 
     val model: HomeFragmentViewModel by activityViewModels<HomeFragmentViewModel>()
@@ -60,28 +41,19 @@ class Step1Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.step1_fragment, container, false)
-
-
+        return inflater.inflate(R.layout.step4_fragment, container, false)
     }
-
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        onClickButton()
-        recto = requireView().findViewById(R.id.PhotoRecto)
-        verso = requireView().findViewById(R.id.PhotoVerso)
-
-        recto.setOnClickListener {
+        photoAgent.setOnClickListener {
             isRecto =true
             callCamera()
         }
-        verso.setOnClickListener {
+        photoVente.setOnClickListener {
             isRecto =false
             callCamera()
         }
-
 
     }
 
@@ -91,39 +63,40 @@ class Step1Fragment : Fragment() {
             .compress(1024)			//Final image size will be less than 1 MB(Optional)
             .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
             .start()
+
     }
 
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             //Image Uri will not be null for RESULT_OK
             val uri: Uri = data?.data!!
             val api = AgentApi()
             if (isRecto){
-                recto.setImageURI(uri)
-              progress_Bar_upload.isVisible=true
+                photoAgent.setImageURI(uri)
+                progress_Bar_upload.isVisible=true
+
                 api.uploadFile(uri,{
                     imageFront=it
                     progress_Bar_upload.isVisible=false
-                    model.userToCreate.value!!.imageRecto=it
+                    model.userToCreate.value!!.photoAgent=it
                     Toast.makeText(requireContext(),"upload succeeded",Toast.LENGTH_LONG).show()
-                    Log.e("imqge recto",it)
+                    Log.e("imqge agent",it)
                 },{
                     progress_Bar_upload.isVisible=false
                     Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
                 })
 
             }else{
-                verso.setImageURI(uri)
+                photoVente.setImageURI(uri)
                 progress_Bar_upload.isVisible=true
                 api.uploadFile(uri,{
                     imageBack=uri.toString()
                     progress_Bar_upload.isVisible=false
-                    model.userToCreate.value!!.imageVerso=it
                     Toast.makeText(requireContext(),"upload succeeded",Toast.LENGTH_LONG).show()
-                    Log.e("imqge verso",it)
+                    Log.e("imqge point de vente",it)
+                    model.userToCreate.value!!.photoPointVente=it
                 },{
                     progress_Bar_upload.isVisible=false
                     Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
@@ -136,31 +109,60 @@ class Step1Fragment : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        onClickButton()
+
+    }
 
 
-
-
-    // code clique du bouton terminé à succregistration
+    // code cique du bouton terminé à succregistration
     private fun onClickButton() {
         next.setOnClickListener {
-            if(imageBack.isNotEmpty() and imageFront.isNotEmpty()){
-                model.userToCreate.value!!.imageRecto=imageFront
-                model.userToCreate.value!!.imageVerso=imageBack
-                Log.e("images front",imageFront)
-                Log.e("images front",imageBack)
-                generalPosition.value?.let {
-                    generalPosition.value = 1
-                }
-            }else{
-                Toast.makeText(requireContext(),"you should provide both images",Toast.LENGTH_LONG).show()
+            if(validateFields()){
+                progress_Bar_submission.isVisible=true
+                model.createAgent({
+                    progress_Bar_submission.isVisible=false
+                    generalPosition.value?.let {
+                        findNavController().navigate(R.id.action_navigation_home_to_sucessRegistrationFragment)
+                    }
+                },{
+                    Toast.makeText(requireContext(),it,Toast.LENGTH_LONG).show()
+                })
             }
 
 
         }
+        previews.setOnClickListener {
+            generalPosition.value?.let {
+                    generalPosition.value = 2
+            }
 
+        }
     }
+     fun validateFields():Boolean{
+         var result= true
+          if (imageFront.isEmpty() or imageBack.isEmpty()){
+              return false
+              Toast.makeText(requireContext(),"my guy both images",Toast.LENGTH_LONG).show()
+          }
+         if (entreprise_agent.text.toString().isEmpty() or entreprise_agent.text.toString().isBlank()){
+             entreprise_agent.error="required"
+             return false
+         }else{
+             model.userToCreate.value!!.entrepriseAgent=entreprise_agent.text.toString()
+         }
+         if (smobilpay_id_utilisateur.text.toString().isEmpty() or smobilpay_id_utilisateur.text.toString().isBlank()){
+             entreprise_agent.error="required"
+             return false
+         }else{
+             model.userToCreate.value!!.smobilpayIdUtilisateur=smobilpay_id_utilisateur.text.toString()
+         }
+         return result
+      }
 
 
 
 
 }
+

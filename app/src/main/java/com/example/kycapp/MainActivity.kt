@@ -17,16 +17,17 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+/**
+ * Main activity
+ *
+ * @constructor Create empty Main activity
+ */
+class MainActivity : AppCompatActivity() {
 
 
     companion object {
         val db = Firebase.firestore
-        lateinit var rooMdb: AppDatabase
         val storage = Firebase.storage
-        var googleMap = MutableLiveData<GoogleMap>().apply {
-            value = null
-        }
     }
 
     private lateinit var binding: ActivityMainBinding
@@ -44,13 +45,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         // menu should be considered as top level destinations.
 
         navView.setupWithNavController(navController)
-        rooMdb = Room.databaseBuilder(
-            applicationContext,
-            AppDatabase::class.java, "database-name"
-        ).build()
     }
 
-    override fun onMapReady(p0: GoogleMap) {
-        googleMap.value=p0
-    }
 }

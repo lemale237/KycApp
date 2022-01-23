@@ -30,6 +30,30 @@ class AgentApi {
         }
     }
 
+    fun getAgent( phoneNumber:String,onSuccess: (agent: Agent) -> Unit, onFailure: (message: String) -> Unit) {
+        db.collection("Agents").document(phoneNumber).get().addOnSuccessListener {
+            if (it==null) {
+
+            } else {
+                try {
+                    var data = it.toObject(Agent::class.java)
+                    if (data!=null){
+                        onSuccess(data)
+                    }
+
+                }catch (e:Exception){
+                    if (e.message==null){
+                        onFailure("failed to get the agents")
+                    }else{
+                        onFailure(e.message!!)
+                    }
+
+                }
+
+            }
+        }
+    }
+
     fun lisLocations(onSuccess: (locations: List<Location>) -> Unit, onFailure: (message: String) -> Unit) {
         db.collection("Locations").get().addOnSuccessListener {
             if (it.isEmpty) {
@@ -54,7 +78,7 @@ class AgentApi {
 
 
     fun createAgent(agent: Agent, onSuccess: () -> Unit, onFailure: (message: String) -> Unit) {
-        db.collection("Agents").document().set(agent).addOnSuccessListener {
+        db.collection("Agents").document(agent.phoneNumber).set(agent).addOnSuccessListener {
             onSuccess()
         }.addOnFailureListener {
             if (it.message == null) {

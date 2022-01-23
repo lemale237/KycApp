@@ -1,23 +1,14 @@
-package com.example.kycapp.ui.step3
+package com.example.kycapp.ui.profileForm.step3
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
 import com.example.kycapp.R
-import com.example.kycapp.databinding.FragmentHomeBinding
-import com.example.kycapp.ui.HomeFragmentViewModel
-import com.example.kycapp.ui.adapter.ViewPagerAdapter
-import com.example.kycapp.ui.home.HomeFragment
-import com.example.kycapp.ui.home.HomeFragment.Companion.generalPosition
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
+import com.example.kycapp.ui.profileForm.HomeFragmentViewModel
+import com.example.kycapp.ui.profileForm.HomeFragment.Companion.generalPosition
 import kotlinx.android.synthetic.main.step2_fragment.*
 import kotlinx.android.synthetic.main.step3_fragment.*
 import kotlinx.android.synthetic.main.step3_fragment.next

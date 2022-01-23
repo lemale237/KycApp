@@ -1,20 +1,25 @@
-package com.example.kycapp
+package com.example.kycapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kycapp.R
 import com.example.kycapp.entites.Agent
-import com.example.kycapp.ui.dashboard.DashboardFragment
 import com.example.kycapp.ui.dashboard.DashboardViewModel
 import com.squareup.picasso.Picasso
 import java.lang.Exception
 
-
+/**
+ * Grid item adapter
+ *
+ * @property agentList
+ * @property onAgentSelected
+ * @constructor Create empty Grid item adapter
+ */
 class GridItemAdapter(private val agentList: ArrayList<Agent>,var onAgentSelected:(agent:Agent)->Unit) :
     RecyclerView.Adapter<GridItemAdapter.ViewHolder>() {
 

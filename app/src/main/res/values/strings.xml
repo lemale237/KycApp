@@ -8,12 +8,12 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="sign_in">Sign In</string>
 
-    <string name="app_name">smobilPay</string>
+    <string name="app_name">Gozem Test</string>
     <string name="to">to</string>
     <string name="subject">subject</string>
     <string name="message">message</string>
     <string name="launch_text">created by</string>
-    <string name="launch_text_enterprise">MAVIANCE PLC</string>
+    <string name="launch_text_enterprise">Test By Kemtsop fomena Landry</string>
     <string name="email_address">Email</string>
     <string name="password">Mot de passe</string>
     <string name="connexion">connexion</string>
@@ -40,7 +40,7 @@
     <string name="numero_cni">Numéro CNI</string>
     <string name="profession_agent">Profession de l\'agent</string>
     <string name="activite">Activité</string>
-    <string name="capital_initial_agent">Capital initial de l\'agent</string>
+    <string name="capital_initial_agent">Salary initial de l\'agent</string>
     <string name="source_financiere_agent">Source financière de l\'agent</string>
     <string name="entreprise_agent">Entreprise de l\'agent</string>
     <string name="smobilpay_id_utilisateur">Smobilpay ID utilisateur</string>
@@ -79,6 +79,7 @@
     <string name="smobilpay4569">smobilpay4569</string>
     <string name="sign_up">Signup</string>
     <string name="map">Map</string>
+    <string name="feature_to_be_implemented">Feature available in the next version</string>
 
 
 </resources>

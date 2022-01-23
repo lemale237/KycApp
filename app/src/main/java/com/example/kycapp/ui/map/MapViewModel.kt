@@ -11,6 +11,7 @@ import androidx.room.RoomDatabase
 import com.example.kycapp.entites.remote.Location
 import com.example.kycapp.GozemApplication
 import com.example.kycapp.api.AgentApi
+import com.example.kycapp.entites.Agent
 import kotlinx.coroutines.launch
 
 class MapViewModel() : ViewModel() {
@@ -40,5 +41,16 @@ class MapViewModel() : ViewModel() {
       })
 
 
+   }
+   var agent=MutableLiveData<Agent>().apply {
+      value= Agent()
+   }
+    fun getAgent(context: Context){
+      val api = AgentApi()
+      api.getAgent("+237698481557",{
+         agent.postValue(it)
+      },{
+         Toast.makeText(context,it,Toast.LENGTH_LONG).show()
+      })
    }
 }

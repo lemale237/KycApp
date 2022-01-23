@@ -1,6 +1,5 @@
-package com.example.kycapp.ui.successRegistration
+package com.example.kycapp.ui.profileForm.successRegistration
 
-import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,11 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.kycapp.R
 import android.os.Handler
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.example.kycapp.ui.LoginActivity
-import com.example.kycapp.ui.dashboard.DashboardFragment
-import com.example.kycapp.ui.home.HomeFragment
+import com.example.kycapp.ui.profileForm.HomeFragment
 
 
 class SucessRegistrationFragment : Fragment() {

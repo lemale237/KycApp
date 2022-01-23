@@ -21,6 +21,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:id="@+id/profileImage"
         android:background="@drawable/circular_shape"
         android:backgroundTint="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="@+id/top_background"
@@ -67,6 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Your Name"
+                    android:id="@+id/user_name"
                     android:textColor="@color/purple_500"
                     android:textSize="16sp" />
 
@@ -87,6 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="your@emai.com"
+                    android:id="@+id/user_email"
                     android:textColor="@color/purple_500"
                     android:textSize="16sp" />
             </LinearLayout>

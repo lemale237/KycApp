@@ -5,17 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.kycapp.GridItemAdapter
+import com.example.kycapp.ui.adapter.GridItemAdapter
 import com.example.kycapp.api.AgentApi
 import com.example.kycapp.databinding.FragmentDashboardBinding
 import com.example.kycapp.entites.Agent
-import com.example.kycapp.ui.HomeFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class DashboardFragment : Fragment() {

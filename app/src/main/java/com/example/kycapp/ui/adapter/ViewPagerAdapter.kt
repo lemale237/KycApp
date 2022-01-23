@@ -3,10 +3,10 @@ package com.example.kycapp.ui.adapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.kycapp.ui.step1.Step1Fragment
-import com.example.kycapp.ui.step2.Step2Fragment
-import com.example.kycapp.ui.step3.Step3Fragment
-import com.example.kycapp.ui.step4.Step4Fragment
+import com.example.kycapp.ui.profileForm.step1.Step1Fragment
+import com.example.kycapp.ui.profileForm.step2.Step2Fragment
+import com.example.kycapp.ui.profileForm.step3.Step3Fragment
+import com.example.kycapp.ui.profileForm.step4.Step4Fragment
 
 class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 

@@ -1,26 +1,19 @@
-package com.example.kycapp.ui.home
+package com.example.kycapp.ui.profileForm
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.kycapp.R
 import com.example.kycapp.databinding.FragmentHomeBinding
-import com.example.kycapp.ui.HomeFragmentViewModel
 import com.example.kycapp.ui.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlin.math.absoluteValue
 
 class HomeFragment : Fragment() {
 
